@@ -8,7 +8,7 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background: #f8f8f8;
+    background: seagreen;
     box-sizing: border-box;
 }
 .inputBox {
@@ -17,7 +17,7 @@ body {
 }
 .inputBox h2 {
     font-size: 28px;
-    color: #333;
+    color: white;
 }
 .inputBox input {
     position: relative;
@@ -27,26 +27,75 @@ body {
     margin: 15px 0 20px;
     background: transparent;
     padding: 0 20px;
-    letter-spacing: 4px;
+    letter-spacing: 6px;
     font-size: 24px;
     border-radius: 8px;
     color: #333;
     outline: none;
-    box-shadow: -4px -4px 10px rgba(255,255,255,1), inset 4px 4px 10px rgba(0,0,0,0.05);
+    border: 2px solid;
+    color: white;
 }
 .inputBox input::placeholder {
     letter-spacing: 0px;
 }
-.inputBox #btn {
-    position: relative;
-    cursor: pointer;
-    color: #fff;
-    background: #333;
-    font-size: 24px;
-    display: inline-block;
-    padding: 10px 15px;
-    border-radius:8px;
+
+
+.lds-ellipsis {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  top: 37px;
+  left: 15px
+
 }
-.inputBox #btn:active {
-    background: #9c27b0;
+.lds-ellipsis div {
+  position: absolute;
+  top: 33px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #fff;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.lds-ellipsis div:nth-child(1) {
+  left: 8px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(2) {
+  left: 8px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(3) {
+  left: 32px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(4) {
+  left: 56px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
+  }
 }
